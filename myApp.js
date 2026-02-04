@@ -10,5 +10,11 @@ app.get("/",(req,res) => {
     res.sendFile(absolutePath);
 });
 
+const messageObject = {"message" : "Hello json"};
+
+app.get("/json",(req,res)=> {
+    res.json(messageObject)
+});
+
 
  module.exports = app;
