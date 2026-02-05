@@ -33,4 +33,14 @@ app.get("/json", (req,res)=> {
 });
 
 
+app.get('/now',(req,res,next) => {
+    req.time = new Date();
+    console.log(req.time);
+    next();
+}, function(req,res){
+        res.json({time: req.time});
+    }
+);
+
+
  module.exports = app;
